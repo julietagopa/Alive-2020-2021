@@ -25,9 +25,10 @@ button{
   height: 50px;
 
 }
-.elemento-grid{
-  /*border: solid white 2px;*/
-  /*padding: 50px;*/
+.elemento-grid:hover{
+  background-color: orange;
+transform: scale(1.1);
+border:hidden;
 
 }
 html{
@@ -45,4 +46,26 @@ html{
 .columna-2{
   border-bottom:   solid black;
   border-bottom-color: pink ;
+}
+.abajo{
+color:red;
+
+}
+.main{
+
+
+}
+.morada{
+  background-color: blue;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+
+}
+.verde{
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: 50px;
+
 }

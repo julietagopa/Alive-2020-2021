@@ -4,29 +4,35 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="./estilos.css">
-    <script type="text/javascript" src="./script.js"> </script>
+    <script src="./script.js"> </script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
 <h1> TIC TAC TOE </h1>
 <button> Reiniciar</button>
-
-<div class="contenedor-grid">
-  <div class="elemento-grid columna"> </div>
-  <div class="elemento-grid columna"> </div>
-  <div class="elemento-grid columna-2 "> </div>
-  <div class="elemento-grid columna"></div>
-  <div class="elemento-grid columna"> </div>
-  <div class="elemento-grid columna-2"> </div>
-  <div class="elemento-grid columna"> </div>
-  <div class="elemento-grid columna"> </div>
-  <div class="elemento-grid columna-2"> </div>
-
+<div class="main">
+  <div class="contenedor-grid">
+    <div class="elemento-grid columna" id="casilla1" onclick="marcarCasilla();"><p></p></div>
+    <div class="elemento-grid columna" id="casilla2" onclick="marcarCasilla();"><p></p></div>
+    <div class="elemento-grid columna-2 "><p></p></div>
+    <div class="elemento-grid columna"><p></p></div>
+    <div class="elemento-grid columna"><p></p></div>
+    <div class="elemento-grid columna-2"><p></p></div>
+    <div class="elemento-grid columna"><p></p></div>
+    <div class="elemento-grid columna"><p></p></div>
+    <div class="elemento-grid columna-2"> <p></p></div>
+  </div>
+  <div id="mensaje-ganador">
+    <p>FELICIDADES</p>
+  </div>
 </div>
 
+<div class="abajo">
+<h2>Turno del jugador <span id="jugadorEnTurno"> 1</span></h2>
 
-<button> - </button>
 
+<button> VS </button>
+</div>
   </body>
 </html>
