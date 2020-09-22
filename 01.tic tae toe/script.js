@@ -1,33 +1,41 @@
 let turnoPrimerJugador = true
 let copiaTablero=[]
+let juegoActivo=true;
+let mensajeGanador=true;
 
 function marcarCasilla(numero) {
   let casilla = document.getElementById('casilla'+ numero);
 
-let  ocupada = estaOcupada(casilla)
-if(!ocupada){
-  if (turnoPrimerJugador) {
-      casilla.classList.add("morada");
-      casilla.classList.remove("verde")
-      casilla.childNodes[0].innerText ="X";
-      copiaTablero[numero-1]='x'
-      turnoPrimerJugador = false
-      }
-          else {
-      casilla.classList.add("verde");
-      casilla.classList.remove("morada")
-    casilla.childNodes[0].innerText="O";
-      copiaTablero[numero-1]='o'
-        turnoPrimerJugador = true
-    }
-  if ( revisarGanador()){
-    console.log("YA HAY UN GANADOR")
-    //BLOQUEAR TABLERO
-    //MOSTRAR LETRERO DE FLCDS
-     }
-   }
+let  ocupada = estaOcupada(casilla);
+if(juegoActivo){
+      if(!ocupada){
+        if (turnoPrimerJugador) {
+            casilla.classList.add("morada");
+            casilla.classList.remove("verde");
+            casilla.childNodes[0].innerText ="X";
+            copiaTablero[numero-1]='x';
+            turnoPrimerJugador = false;
+            }
+                else {
+            casilla.classList.add("verde");
+            casilla.classList.remove("morada")
+          casilla.childNodes[0].innerText="O";
+            copiaTablero[numero-1]='o';
+              turnoPrimerJugador = true;
+          }
+        if ( revisarGanador()){
+          console.log("YA HAY UN GANADOR")
+          juegoActivo=false;
 
-}
+
+          document.getElementById("mensajeGanador").style.display="inline-block";
+
+          }
+                      //BLOQUEAR TABLERO
+          //MOSTRAR LETRERO DE FLCDS
+           }
+        }
+    }
 
 function revisarGanador() {
   //revisar todas las posibles opciones de ganar la partida dependiendo de la posisicion de mis arreglos
@@ -65,8 +73,8 @@ if (casilla.childNodes[0].innerText) {
 
 return true;
 } else {
-
   return false;
+
 
 
 }
@@ -83,9 +91,11 @@ limpiarCasilla(7);
 limpiarCasilla(8);
 limpiarCasilla(9);
 
-copiaTablero=[];
+copiaTablero= [];
+juegoActivo= true;
+document.getElementById('mensajeGanador').style.display="none"
 }
-function limpiar(numero) {
+function limpiarCasilla(numero) {
 let casilla = document.getElementById("casilla"+ numero);
 //vaciar casilla o texto vacio
 casilla.childNodes[0].innerText="";

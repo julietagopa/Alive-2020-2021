@@ -21,6 +21,7 @@ button{
   font-family: 'Montserrat', sans-serif;
   font-size: px;
   margin:20px 100px 0px 100px;
+  flex: auto;
 
 
 }
@@ -73,5 +74,18 @@ color: white;
   color: black;
   text-align: center;
   font-size: 50px;
+
+}
+
+#mensajeGanador{
+  display: none;
+}
+
+
+.no{
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 55px;
+  text-shadow: 0.1em 0.1em 0.2em #DFC2F2 ;
 
 }
