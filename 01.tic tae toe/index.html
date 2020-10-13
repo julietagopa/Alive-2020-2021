@@ -11,7 +11,7 @@
   <body>
 <h1> TIC TAC TOE </h1>
 <button class="ok" onclick="reiniciarJuego();"> Reiniciar</button>
-<div class="main">
+<div class="main" >
   <div class="contenedor-grid">
     <div class="elemento-grid columna" id="casilla1" onclick="marcarCasilla(1);"><p></p></div>
     <div class="elemento-grid columna" id="casilla2" onclick="marcarCasilla(2);"><p></p></div>
@@ -23,16 +23,22 @@
     <div class="elemento-grid columna"id="casilla8" onclick="marcarCasilla(8);"><p></p></div>
     <div class="elemento-grid columna-2"id="casilla9" onclick="marcarCasilla(9);"><p></p></div>
   </div>
-  <div class="no" id="mensajeGanador">
-    <p>FELICIDADES</p>
-  </div>
+
 </div>
 
 <div class="abajo">
 <h2>Turno del jugador <span id="jugadorEnTurno"> 1</span></h2>
 
 
-<button class="ok" id="juegoTipo" onclick="modoJuego"> VS CPU </button>
+<button class="ok" id="juegoTipo" onclick="modoJuego();"> VS CPU </button>
 </div>
+
+<div class="oko">
+<div class="no" id="mensajeGanador">
+  <p>FELICIDADES</p>
+</div>
+</div>
+
   </body>
+
 </html>

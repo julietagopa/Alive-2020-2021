@@ -9,20 +9,20 @@ function marcarCasilla(numero) {
 
 let  ocupada = estaOcupada(casilla);
 if(juegoActivo){
-      if(!ocupada){
+    //  if(!ocupada){
         if (turnoPrimerJugador) {
             casilla.classList.add("morada");
             casilla.classList.remove("verde");
-            casilla.childNodes[0].innerText ="X";
-            copiaTablero[numero-1]='x';
+            casilla.childNodes[0].innerText ="☻";
+            copiaTablero[numero-1]='☻';
             turnoPrimerJugador = false;
            document.getElementById("jugadorEnTurno").innerText=2;
             }
                 else {
             casilla.classList.add("verde");
             casilla.classList.remove("morada")
-          casilla.childNodes[0].innerText="O";
-            copiaTablero[numero-1]='o';
+          casilla.childNodes[0].innerText="☺";
+            copiaTablero[numero-1]='☺';
               turnoPrimerJugador = true;
              document.getElementById("jugadorEnTurno").innerText=1;
 
@@ -32,27 +32,59 @@ if(juegoActivo){
           juegoActivo=false;
           document.getElementById("mensajeGanador").style.display="inline-block";
         } else {
-
+          //no hubo ganador, pasamos al sig jugador
+          revisarEmpate()
           if(jugadores===1){
             //estamos juando contra CPU
             if (!turnoPrimerJugador){
-              turnoCPU
+              turnoCPU()
             }
           }
         }
 
-          }
+        //  }
                       //BLOQUEAR TABLERO
           //MOSTRAR LETRERO DE FLCDS
            }
         }
 
+function revisarEmpate() {
+  //revisar copiaTablero para saber si ya tiene marcadas las 9 casillas
+  if (
+    copiaTablero[0] &&
+    copiaTablero[1] &&
+    copiaTablero[2] &&
+    copiaTablero[3] &&
+    copiaTablero[4] &&
+    copiaTablero[5] &&
+    copiaTablero[6] &&
+    copiaTablero[7] &&
+    copiaTablero[8]
+
+  ) {
+    juegoActivo=false;
+  }
+}
+
+
+
+
   function turnoCPU() {
 
-    let numAleatorio=Math.floor(Math.random()*10)
-    let seleccionCPU=document.getElementById("casilla"+ numAleatorio)
+    let numAleatorio=Math.floor(Math.random()*(9)) + 1;
+  let casillaSeleccionada=document.getElementById("casilla"+numAleatorio)
+  console.log(numAleatorio)
+      if(juegoActivo){
+        if(!estaOcupada(casillaSeleccionada)){
+          marcarCasilla(numAleatorio);
+        } else {
+          turnoCPU()
+        }
+      }
 
-    estaOcupada(seleccionCPU)
+    // let seleccionCPU=document.getElementById("casilla"+ numAleatorio)
+
+    //estaOcupada(seleccionCPU)
   }
 
 
@@ -113,8 +145,8 @@ limpiarCasilla(9);
 copiaTablero= [];
 juegoActivo= true;
 turnoPrimerJugador=true;
-document.getElementById('mensajeGanador').style.display="none"
-document.getElementById("jugadorEnTurno").innerText=1
+document.getElementById('mensajeGanador').style.display="none";
+document.getElementById("jugadorEnTurno").innerText=1;
 
 }
 function limpiarCasilla(numero) {
@@ -129,11 +161,13 @@ casilla.classList.remove("verde");
 function modoJuego() {
 
   if (jugadores===2){
-    document.getElementById("juegoTipo").innerText="Vs jugador";
+    document.getElementById("juegoTipo").innerText="Vs PLAYER";
   jugadores=1;
+  turnoPrimerJugador=true;
+
 }
   else {
-          document.getElementById("juegoTipo").innerText="VS cpu";
+          document.getElementById("juegoTipo").innerText="Vs CPU";
           jugadores=2;
             }
             reiniciarJuego();
