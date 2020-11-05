@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js"> </script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=PT+Sans+Narrow:wght@700&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@900&family=PT+Sans+Narrow:wght@700&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="logo-1">
+    <MARQUEE BEHAVIOR=ALTERNATE>Paper | Rock | Scissors</MARQUEE>
+      </h1>
+<div>
+<p class="holas">Llega  a 5 puntos te ganas una canción sorpresa :)</p>
+</div>
+  <button id="boton" onclick="reinicio();"  class="botone">REINICIAR</button>
+<div class="pap">
+  <p id="toma"></p>
+  <audio src="C:\Users\lenovo\Downloads\let.mp3"controls  loop id="rola1" onclick="r(1);" style="display:none;"></audio>
+<audio src="C:\Users\lenovo\Downloads\dis.mp3"controls  loop id="rola2" onclick="r(2);"style="display:none;"></audio>
+<audio src="C:\Users\lenovo\Downloads\ka.mp3"controls  loop id="rola3" onclick="r(3);"style="display:none;"></audio>
+</div>
+</div>
+<div></div>
+  <div class="hola">
+    <button class="centrado" onclick="opcion(1);" id="piedra1">🌑</button>
+    <button class="centrado" onclick="opcion(2);" id="piedra2">📜</button>
+    <button class="centrado" onclick="opcion(3);" id="piedra3">✂</button>
+  </div>
+    <div class="felicitar">
+    <p id="resultado"> INICIEMOS <p>
+  </div>
+  <div class="centro">
+    <div class="contenedor-grid" id="tabla">
+      <div class="estilo" >
+        <h2> COMPUTER </h2>
+                <p class="ok" id="puntajeCPU">0</p>
+      </div>
+      <div class="estilo">
+        <h2> PLAYER</h2>
+                <p class="ok"  id="puntajeUsu">0</p>
+      </div>
+      <div class="estilo">
+        <h2> EMPATES</h2>
+                <p class="ok"  id="empates">0</p>
+      </div>
+    </div>
+  </div>
+  <div>
+  <p class="ad">Tu selección: </p>  
+  <p id="miJugada"></p>
+    <h2>
+    </div>
+      <div >
+        <div><p class="ad"> VS: </p>
+          <p id="contra"> </p>
+        </div>                  
+      </div>
+    
+      
+
+</body>
+
+</html>
